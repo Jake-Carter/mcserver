@@ -1,0 +1,11 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"minecraft:terracotta"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:clay"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:crafting_table"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:blast_furnace"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"magistuarmory:kettlehat"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"magistuarmory:steel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"magistuarmory:steel_plate"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"magistuarmory:knight_leggings"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]
