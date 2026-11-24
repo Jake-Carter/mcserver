@@ -435,7 +435,8 @@ void main() {
 
                     float heightfade = smoothstep(-0.35, 1.0, grassHeights[3*j+i]);
 
-                    data_out.color = data_in[i].color*heightfade;
+                    // alpha carries vanilla AO; keep the ground's so the height gradient isn't applied twice
+                    data_out.color = vec4(data_in[i].color.rgb*heightfade, data_in[i].color.a);
 
                     if (data_in[i].color.rgb == vec3(1.0)) data_out.color.rgb = vec3(0.22,0.32,0.11)*heightfade;
 

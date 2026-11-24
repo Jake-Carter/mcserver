@@ -1528,6 +1528,7 @@ void main() {
 				float SkylightDir = indirectNormal.y;
 
 				if(isGrass) SkylightDir = 1.0;
+				if(isShaderGrass) SkylightDir = mix(SkylightDir, 1.0, GRASS_AMBIENT_FILL);
 				
 				SkylightDir = clamp(SkylightDir*0.7+0.3, 0.0, pow(1-pow(1-SSAO_SSS.x, 0.5),4.0) * 0.7 + 0.3);
 
@@ -1649,7 +1650,7 @@ void main() {
 
 		// RTAO and/or SSGI
 		#if indirect_effect == SSRT_AO || indirect_effect == SSRT_AO_GI
-			if(!hand) Indirect_lighting = ApplySSRT(Indirect_lighting, blockLightColor, MinimumLightColor, viewPos, normal, vec3(bnoise, noise_2), lightmap.y, isGrass, isDHrange);
+			if(!hand) Indirect_lighting = ApplySSRT(Indirect_lighting, blockLightColor, MinimumLightColor, viewPos, normal, vec3(bnoise, noise_2), lightmap.y, isGrass || isShaderGrass, isDHrange);
 		#endif
 
 
@@ -1704,6 +1705,11 @@ void main() {
 		#endif
 
 		vec3 FINAL_COLOR = (Indirect_lighting + Direct_lighting) * albedo;
+
+		#if defined GRASS_LIGHTING_DEBUG && defined OVERWORLD_SHADER
+			// R = sky visibility, G = ambient occlusion, B = albedo luminance
+			if(isShaderGrass) FINAL_COLOR = vec3(skylight, AO.x, luma(albedo));
+		#endif
 
 		Emission(FINAL_COLOR, albedo, SpecularTex.a);
 		

@@ -1067,6 +1067,9 @@ const vec3 aerochrome_color = mix(vec3(1.0, 0.0, 0.0), vec3(0.715, 0.303, 0.631)
 
 #define GRASS_RANDOMNESS 0.5 // [0.0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.95 1.0]
 
+#define GRASS_AMBIENT_FILL 1.0 // [0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
+// #define GRASS_LIGHTING_DEBUG
+
 #define RAINBOW_SELECT_BOX 0 // [0 1 2]
 
 #ifdef WAVING_MULTIPART_GRASS

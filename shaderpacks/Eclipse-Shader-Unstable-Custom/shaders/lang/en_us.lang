@@ -144,6 +144,8 @@ screen.Foliage = Foliage
     option.GRASS_RANGE = Grass Maximum Range
     option.GRASS_WAVY_STRENGTH = Grass Waving Strength
     option.GRASS_RANDOMNESS = Grass Randomness Strength
+    option.GRASS_AMBIENT_FILL = Grass Ambient Fill
+        option.GRASS_AMBIENT_FILL.comment = Lights grass blades in shade with the sky visibility of the ground, like vanilla plants, instead of their sideways-facing normals. 0 = original behavior.
     option.GRASS_NOISE1_SCALE = Grass Randomness Noise 1 Scale
     option.GRASS_NOISE2_SCALE = Grass Randomness Noise 2 Scale
 
